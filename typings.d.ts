@@ -2,14 +2,14 @@ interface Board {
     columns : Map<TypedColumn , Column>
 }
 
-type TypedColumn = "todo" | "inprogress" | "done";
+type TypedColumn = "todo" | "Inprogress" | "done";
 
 interface Column {
     id: TypedColumn;
-    todos: Todos[];
+    todos: Todo[];
 }
 
-interface Todos {
+interface Todo {
     $id: string;
     $createAt: string;
     title: string;
