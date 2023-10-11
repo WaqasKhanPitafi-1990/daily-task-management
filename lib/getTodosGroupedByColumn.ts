@@ -3,36 +3,14 @@ import { databases } from "@/appwrite"
 export const getTodosGroupedByColumn = async () => {
     const data = await databases.listDocuments(
         '6523ba6714f9274e0787',
-        '6523bb204ac5fff20ac7'
+        '6523bb204ac5fff20ac7',
+    //     process.env.NEXT_PUBLIC_DATABASE_ID!,
+    //    process.env.NEXT_PUBLIC_TODOS_COLLECTION_ID!,
     );
     console.log(data,'data.........');
     
 
     const todos = data.documents;
-// let DATA:any ={
-
-//     todos:[],
-//     inprogress:[],
-//     done:[]
-// }
-
-
-//     todos?.map((item:any,index:number)=>{
-//         console.log({object:item?.status})
-//         if(item?.status == 'todo,'){
-//             console.log('todo')
-//             DATA.todos.push(item)
-//         }
-//         if(item?.status == 'Inprogress,'){
-//             console.log('inprogress')
-//             DATA.inprogress.push(item)
-//         }
-//         if(item?.status == 'done,'){
-//             console.log('done')
-//             DATA.done.push(item)
-//         }
-//     })
-//     console.log({DATA})
 
     const columns = todos.reduce((acc,todo) => {
        if(!acc.get(todo.status)) {

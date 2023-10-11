@@ -51,6 +51,7 @@ const Column = ({ id, todos, index }: Props) => {
                        .toLowerCase()
                        .includes(searchString.toLowerCase())
                     ).length}
+                    
                   </span>
                 </h2>
 
